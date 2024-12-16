@@ -1,0 +1,9 @@
+int titleToNumber(char* columnTitle) {
+    int result = 0;  
+    int length = strlen(columnTitle);
+    for (int i = 0; i < length; i++) {
+        int j = columnTitle[i] - 'A' + 1;
+        result = result * 26 + j;
+    }
+  return result;
+}
