@@ -1,0 +1,19 @@
+long long int mySqrt(long long int x) {
+    long long int i,n=x,s=0;
+    if (n == 0 || n == 1) 
+    return n;
+    if(n==2||n==3)
+    return 1;
+    for(i=2;i*i<=n;i++) 
+    {
+        if (i*i==n) 
+        {
+            s=i;
+            break;
+        } 
+        else if (i*i<n&&(i + 1)*(i + 1)>n) {
+            s = i;  
+        }
+    }
+     return s;
+}
