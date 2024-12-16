@@ -1,0 +1,13 @@
+bool isHappy(int num) {
+    int sum, r;
+    while (num != 1 && num != 4) {
+        sum = 0;
+        while (num != 0) {
+            r = num % 10;
+            sum += r * r;
+            num /= 10;
+        }
+        num = sum;
+    }
+    return num == 1;
+}
