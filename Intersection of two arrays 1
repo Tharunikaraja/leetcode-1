@@ -1,0 +1,65 @@
+int* intersection(int* a1, int n1, int* a2, int n2, int* returnSize) {
+
+    
+
+    int k=0;
+
+   int *s=malloc(((n1>n2)?n1:n2)*sizeof(int));
+
+    for(int i=0;i<n1;i++)
+
+    {
+
+        for(int j=0;j<n2;j++)
+
+        {
+
+            if(a1[i]==a2[j])
+
+            {
+
+                s[k]=a1[i];
+
+                k++;
+
+                break;
+
+            }
+
+        }
+
+    }
+
+    int l=0;
+
+    for(int i=0;i<k;i++)
+
+    {   if(s[i]!=-999){
+
+        s[l]=s[i];
+
+        l++;
+
+        for(int j=i+1;j<k;j++)
+
+        {
+
+              if(s[i]==s[j])
+
+              {
+
+                s[j]=-999;
+
+              }
+
+        }
+
+    }
+
+    }
+
+    *returnSize=l;
+
+    return s;
+
+}
